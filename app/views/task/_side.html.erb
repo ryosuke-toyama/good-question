@@ -1,0 +1,17 @@
+<div class="side">
+  <div class="side-header">
+    <a class="question-btn" href="#">Question</a>
+  </div>
+  <div class="side-bar">
+    <% 20.times do |i|%>
+      <a class="room-selector" href="#">
+        <div class="room-status">
+          わからないこと<%= i + 1%>
+        </div>
+        <div class="room-status">
+          相談者：〇〇
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>

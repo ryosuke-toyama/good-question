@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'task/index'
+  root to: "task#index"
+  resources :task
   devise_for :users
 end
