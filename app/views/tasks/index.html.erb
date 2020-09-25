@@ -1,0 +1,40 @@
+<div class="contents">
+  <div class="main">
+    <%= render "header"%>
+    <div class="center">
+      <div>
+        <span class="day-border">yyyy/mm/dd(w)</span>
+      </div>
+      <% @tasks.each do |task| %>
+        <div class="task">
+          <div class="task-status">
+            日付： <%= task.runtime %>
+          </div>
+          <div class="task-status">
+            時間：  hh:mm
+          </div>
+          <div class="task-status">
+            場所： <%= task.place %>
+          </div>
+          <div class="task-contents">
+            内容：<br>
+            <%= task.todo %>
+          </div>
+          <div class="task-edit">
+            <div>
+              <a class="task-edit-btn" href="#">編集</a>
+            </div>
+            <div>
+              <a class="task-edit-btn" href="#">削除</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      
+    </div>
+    <div class="footer">
+      <a class="add-task-btn" href="/tasks/new">タスク作成</a>
+    </div> 
+  </div>
+  <%= render "side"%>
+</div>
