@@ -1,25 +1,49 @@
 class TasksController < ApplicationController
+
   def index
-    @tasks = Task.all.order('runtime DESC')
+    @tasks = Task.all.order('runtime ASC')
   end
 
   def new
+    @task = Task.new
   end
 
   def create
     @task = Task.new(task_params)
+    if @task.runtime == nil
+      @task.runtime = Date.today
+    end
     @task.checked = false
     if @task.save
       redirect_to root_path
     else
       render :new
     end
+  end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    if @task.valid?
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    task = Task.find(params[:id])
+    task.destroy
+    redirect_to root_path
   end
 
   private
   def task_params
-    params.permit(:runtime, :place, :todo)
+    params.require(:task).permit(:runtime, :place, :todo)
   end
 
 end

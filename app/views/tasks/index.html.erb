@@ -2,30 +2,42 @@
   <div class="main">
     <%= render "header"%>
     <div class="center">
-      <div>
-        <span class="day-border">yyyy/mm/dd(w)</span>
-      </div>
+      <% weekday_char = ["日","月","火","水","木","金","土"] %>
       <% @tasks.each do |task| %>
+        <% alone_day = @tasks.group(:runtime) %>
+        <% if alone_day.include?(task.id)%>
+          <div>
+            <span class="day-border">
+              <%= task.runtime.month %>月
+              <%= task.runtime.day %>日
+              (<%= weekday_char[task.runtime.wday] %>)
+
+            </span>
+          </div>
+        <% end %>
         <div class="task">
           <div class="task-status">
-            日付： <%= task.runtime %>
+            日付： <%= task.runtime.month %>月
+            <%= task.runtime.day %>日
+            (<%= weekday_char[task.runtime.wday] %>)
           </div>
           <div class="task-status">
-            時間：  hh:mm
+            時間：  <%= 0 if task.runtime.hour < 10%><%= task.runtime.hour %>
+            : <%= 0 if task.runtime.min < 10 %><%= task.runtime.min %>
           </div>
           <div class="task-status">
             場所： <%= task.place %>
           </div>
+          <hr>
           <div class="task-contents">
-            内容：<br>
-            <%= task.todo %>
+            <%= safe_join(task.todo.split("\n"), tag(:br)) %>
           </div>
           <div class="task-edit">
             <div>
-              <a class="task-edit-btn" href="#">編集</a>
+              <%= link_to '編集', edit_task_path(task.id), method: :get,class:"task-edit-btn" %>
             </div>
             <div>
-              <a class="task-edit-btn" href="#">削除</a>
+              <%= link_to '削除', task_path(task.id), method: :delete,class:"task-edit-btn" %>
             </div>
           </div>
         </div>

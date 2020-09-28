@@ -33,4 +33,7 @@ ul,li {
 a{
   text-decoration: none;
 }
+a:hover{
+  opacity: .8;
+}
 

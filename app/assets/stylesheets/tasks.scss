@@ -4,7 +4,6 @@
   display: flex;  
 }
 
-
 // 左側メイン画面
 .main{
   height: 100vh;
@@ -117,9 +116,14 @@
   width: calc(100% - 50px);
   text-align: center;
   font-size: 40px;
+  background-color: lightseagreen;
   color: #ffffff;
   border: 1px solid #ffffff;
-  
+}
+.add-task-btn:hover{
+  background-color: rgb(128, 162, 160);
+  cursor: pointer;
+  opacity: .8;
 }
 
 // 右側サイド画面
