@@ -101,6 +101,32 @@
   margin-right: 20px;
 }
 
+// 音声入力ボタン
+.start-btn{
+  display: block;
+  text-align: center;
+  line-height: 100px;
+  color: #ffffff;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 10px solid #ffffff;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.stop-btn{
+  text-align: center;
+  line-height: 100px;
+  color: #ffffff;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 10px solid #ffffff;
+  background-color: crimson;
+  cursor: pointer;
+}
+
 // タスク作成ボタン
 .footer{
   height: 100px;

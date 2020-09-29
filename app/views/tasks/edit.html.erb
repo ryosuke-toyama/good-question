@@ -15,6 +15,8 @@
           内容
         </div>
         <%= f.text_area :todo, placeholder: "例）惣菜を買う", id:"todo", rows:"6", placeholder:"Todo" %>
+        <div class="start-btn" id="start-btn">START</div>
+        <div class="stop-btn" id="stop-btn" style="display: none;">STOP</div>
       </div>
       <div class="footer">
         <%=f.submit '更新', class:"add-task-btn" %>
