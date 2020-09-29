@@ -41,6 +41,18 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
+  def checked
+    task = Task.find(params[:id])
+    if task.checked
+      task.update(checked: false)
+    else
+      task.update(checked: true)
+    end
+
+    task_content = Task.find(params[:id])
+    render json: { task: task_content}
+  end
+
   private
   def task_params
     params.require(:task).permit(:runtime, :place, :todo)

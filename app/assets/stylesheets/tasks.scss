@@ -77,6 +77,12 @@
   position: relative;
   border: 1px solid #666;
 }
+
+// タスクチェック時
+div[data-check="true"]{
+  background-color: gray;
+}
+
 .task-status{
   margin-bottom: 5px;
 }

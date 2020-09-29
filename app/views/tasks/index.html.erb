@@ -15,7 +15,7 @@
             </span>
           </div>
         <% end %>
-        <div class="task">
+        <div class="task" data-id=<%= task.id %> data-check=<%= task.checked %>>
           <div class="task-status">
             日付： <%= task.runtime.month %>月
             <%= task.runtime.day %>日
