@@ -6,15 +6,15 @@
         <div class="f-label">
           日時
         </div>
-        <%= f.text_field :runtime, id:"runtime", placeholder:"Runtime" %>
+        <%= f.text_field :runtime, id:"runtime", value: "#{@task.runtime.strftime("%Y/%m/%d %H:%M")}" %>
         <div class="f-label">
           場所
         </div>
-        <%= f.text_field :place, placeholder: "例）デパ地下で", id:"place", placeholder:"Place" %>
+        <%= f.text_field :place, id:"place", placeholder: "Place" %>
         <div class="f-label">
           内容
         </div>
-        <%= f.text_area :todo, placeholder: "例）惣菜を買う", id:"todo", rows:"6", placeholder:"Todo" %>
+        <%= f.text_area :todo, id:"todo", rows:"6", placeholder:"Todo" %>
         <div class="start-btn" id="start-btn">START</div>
         <div class="stop-btn" id="stop-btn" style="display: none;">STOP</div>
       </div>

@@ -3,27 +3,22 @@
     <%= render "header"%>
     <div class="center">
       <% weekday_char = ["日","月","火","水","木","金","土"] %>
+      <% border_day = []%>
       <% @tasks.each do |task| %>
-        <% alone_day = @tasks.group(:runtime) %>
-        <% if alone_day.include?(task.id)%>
+        <% unless border_day.include?(task.runtime.strftime("%Y%-m%d"))%>
+        <% border_day << task.runtime.strftime("%Y%-m%d")%>
           <div>
             <span class="day-border">
-              <%= task.runtime.month %>月
-              <%= task.runtime.day %>日
-              (<%= weekday_char[task.runtime.wday] %>)
-
+              <%= task.runtime.strftime("%-m 月 %d 日") %>(<%= weekday_char[task.runtime.wday] %>)
             </span>
           </div>
         <% end %>
         <div class="task" data-id=<%= task.id %> data-check=<%= task.checked %>>
           <div class="task-status">
-            日付： <%= task.runtime.month %>月
-            <%= task.runtime.day %>日
-            (<%= weekday_char[task.runtime.wday] %>)
+            <%= task.runtime.strftime("%-m 月 %d 日") %>(<%= weekday_char[task.runtime.wday] %>)
           </div>
           <div class="task-status">
-            時間：  <%= 0 if task.runtime.hour < 10%><%= task.runtime.hour %>
-            : <%= 0 if task.runtime.min < 10 %><%= task.runtime.min %>
+            時間：  <%= task.runtime.strftime("%H : %M") %>
           </div>
           <div class="task-status">
             場所： <%= task.place %>

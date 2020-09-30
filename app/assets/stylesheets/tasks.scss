@@ -50,6 +50,7 @@
 
 // 日付ボーダー
 .day-border {
+  color: rgb(255, 11, 255);
   display: flex;
   align-items: center;
 }
@@ -59,7 +60,7 @@
   content: "";
   height: 1px;
   flex-grow: 1;
-  background-color: #666;
+  background-color: rgb(255, 11, 255);
 }
 
 .day-border:before {

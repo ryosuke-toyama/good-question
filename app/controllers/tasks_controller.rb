@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
   def index
+    redirect_to new_user_session_path unless user_signed_in?
     @tasks = Task.all.order('runtime ASC')
   end
 
@@ -55,7 +56,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:runtime, :place, :todo)
+    params.require(:task).permit(:runtime, :place, :todo).merge(user_id: current_user.id)
   end
 
 end
