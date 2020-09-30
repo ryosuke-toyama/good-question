@@ -1,14 +1,14 @@
 <div class="header">
   <div class="user-name">
-    <%= link_to current_user.nickname, root_path, method: :get %>
+    <%= link_to current_user.nickname, root_path, class:'user-name', method: :get %>
   </div>
   <div>
     <ul class="user-edit">
       <li>
-        <%= link_to '編集', edit_user_registration_path, method: :get %>
+        <%= link_to '編集', edit_user_registration_path, class:'user-edit-btn', method: :get %>
       </li>
       <li>
-        <%= link_to 'ログアウト', user_registration_path, method: :delete %>
+        <%= link_to 'ログアウト', destroy_user_session_path, class:'user-edit-btn', method: :delete %>
       </li>
     </ul>
   </div>

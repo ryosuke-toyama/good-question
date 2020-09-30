@@ -13,17 +13,18 @@
             </span>
           </div>
         <% end %>
-        <div class="task" data-id=<%= task.id %> data-check=<%= task.checked %>>
-          <div class="task-status">
-            <%= task.runtime.strftime("%-m 月 %d 日") %>(<%= weekday_char[task.runtime.wday] %>)
+        <div class="task">
+          <div class="task-status-zone" data-id=<%= task.id %> data-check=<%= task.checked %>>
+            <div class="task-status">
+              <%= task.runtime.strftime("%-m 月 %d 日") %>(<%= weekday_char[task.runtime.wday] %>)
+            </div>
+            <div class="task-status">
+              時間：  <%= task.runtime.strftime("%H : %M") %>
+            </div>
+            <div class="task-status">
+              場所： <%= task.place %>
+            </div>
           </div>
-          <div class="task-status">
-            時間：  <%= task.runtime.strftime("%H : %M") %>
-          </div>
-          <div class="task-status">
-            場所： <%= task.place %>
-          </div>
-          <hr>
           <div class="task-contents">
             <%= safe_join(task.todo.split("\n"), tag(:br)) %>
           </div>

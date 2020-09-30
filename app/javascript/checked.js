@@ -1,6 +1,7 @@
 function check() {
+  const taskStatusZones = document.querySelectorAll(".task-status-zone");
   const tasks = document.querySelectorAll(".task");
-  tasks.forEach(function (task) {
+  taskStatusZones.forEach(function (task) {
      if (task.getAttribute("data-load") != null) {
       return null;
     }
@@ -18,10 +19,11 @@ function check() {
           return null;
         }
         const item = XHR.response.task;
+        const parentTask = task.parentNode;
         if (item.checked === true) {
-          task.setAttribute("data-check", "true");
+          parentTask.setAttribute("data-check", "true");
         } else if (item.checked === false) {
-          task.removeAttribute("data-check");
+          parentTask.removeAttribute("data-check");
         }
       };
     });

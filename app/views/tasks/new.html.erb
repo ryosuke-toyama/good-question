@@ -6,15 +6,15 @@
         <div class="f-label">
           日時
         </div>
-        <%= f.text_field :runtime, placeholder: "例）2020-10-1 10:00", id:"runtime" %>
+        <%= f.text_field :runtime, class:'f-content', placeholder: "例）2020-10-1 10:00", id:"runtime" %>
         <div class="f-label">
           場所
         </div>
-        <%= f.text_field :place, placeholder: "例）デパ地下で", id:"place" %>
+        <%= f.text_field :place, class:'f-content', placeholder: "例）デパ地下で", id:"place" %>
         <div class="f-label">
           内容
         </div>
-        <%= f.text_area :todo, placeholder: "例）惣菜を買う", id:"todo", rows:"6" %>
+        <%= f.text_area :todo, class:'f-content', placeholder: "例）惣菜を買う", id:"todo", rows:"15" %>
       <div class="start-btn" id="start-btn">START</div>
       <div class="stop-btn" id="stop-btn" style="display: none;">STOP</div>
       </div>

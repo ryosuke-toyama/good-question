@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     redirect_to new_user_session_path unless user_signed_in?
-    @tasks = Task.all.order('runtime ASC')
+    @tasks = current_user.tasks.all.order('runtime ASC')
   end
 
   def new
@@ -23,11 +24,11 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @task.update(task_params)
     if @task.valid?
       redirect_to root_path
@@ -37,20 +38,20 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task = Task.find(params[:id])
+    task = current_user.tasks.find(params[:id])
     task.destroy
     redirect_to root_path
   end
 
   def checked
-    task = Task.find(params[:id])
+    task = current_user.tasks.find(params[:id])
     if task.checked
       task.update(checked: false)
     else
       task.update(checked: true)
     end
 
-    task_content = Task.find(params[:id])
+    task_content = current_user.tasks.find(params[:id])
     render json: { task: task_content}
   end
 
