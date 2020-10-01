@@ -1,0 +1,99 @@
+// ユーザーヘッダー
+.sign-header{
+  height: 150px;
+  width: 100vw;
+  background-color: #1b2440;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title{
+  font-size: 50px;
+  color: #ffffff;
+}
+
+// 紹介テキスト
+.explanatory-text{
+  background-color: #171a23;
+  height: 100px;
+  width: calc(100vw - 40px);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+// ログインフォーム
+.user-contents{
+  height: calc(100vh - 350px);
+  width: calc(100vw - 100px);
+  background-color: #171a23;
+  padding: 20px 50px;
+  overflow: scroll;
+}
+.container{
+  width: 100%;
+  background-color: #1b2440;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+.edit_user,
+.new_user{
+  width: 60%;
+  color: #ffffff;
+  font-size: 15px;
+}
+.field{
+  width: 100%;
+}
+.input-bar{
+  height: 20px;
+  width: 300px;
+  line-height: 20px;
+}
+.login-btn{
+  height: 35px;
+  width: 300px;
+  margin: 10px 0;
+  font-size: 20px;
+  background-color: #0099FF;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+.login-btn:hover{
+  opacity: .9;
+}
+
+.registrations-btn{
+  color: #0099FF;
+  font-size: 15px;
+}
+.controller-name-btn{
+  color: #0099FF;
+  font-size: 15px;
+}
+
+.back-btn{
+  font-size: 16px;
+  color: #0099FF;
+}
+.acount-delete-btn{
+  font-size: 15px;
+  display: block;
+  border: none;
+  background-color: #1b2440;
+  color: #0099FF;
+}
+
+// ユーザーフッター
+.sign-footer{
+  height: 20px;
+  width: 100vw;
+  background-color: #1b2440;
+  line-height: 20px;
+  text-align: center;
+  font-size: 8px;
+  color: #ffffff;
+}

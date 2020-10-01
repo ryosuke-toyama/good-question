@@ -1,40 +1,41 @@
-<div class="contents row">
+<%= render "devise/shared/user_header"%>
+<div class="user-contents row">
   <div class="container">
-    <h2>Sign up</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
-        <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
+        <%= f.label :nickname %> <em>(最大15文字)</em><br />
+        <%= f.text_field :nickname, autofocus: true, maxlength: "15", class:"input-bar" %>
       </div>
 
       <div class="field">
         <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class:"input-bar" %>
       </div>
 
       <div class="field">
         <%= f.label :phone_number %> <br />
-        <%= f.text_field :phone_number, autofocus: true %>
+        <%= f.text_field :phone_number, autofocus: true, class:"input-bar" %>
       </div>
 
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class:"input-bar" %>
       </div>
 
       <div class="field">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:"input-bar" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "新規作成", class:"login-btn" %>
       </div>
     <% end %>
   </div>
 </div>
+<%= render "devise/shared/user_footer"%>
