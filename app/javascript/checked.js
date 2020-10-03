@@ -8,7 +8,6 @@ function check() {
     task.setAttribute("data-load", "true");
     task.addEventListener("click", () => {
       const taskId = task.getAttribute("data-id");
-      console.log(taskId)
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `/tasks/${taskId}`, true);
       XHR.responseType = "json";

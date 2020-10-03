@@ -1,2 +1,46 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<div class="contents">
+  <div class="main">
+    <%= render "tasks/header"%>
+    <%= form_with model:@room, local: true do |f|%>
+      <div class="center">
+        <div class="room-builder">
+          <div class="user-selector">
+            <div class="user-seach">
+              ①相談する相手を選択してください
+            </div>
+            <div class="user-scroll">
+              <% User.all.where.not(id: current_user.id).each do |user|%>
+                <div class="user-bar" data-name=<%= user.nickname%> data-id=<%= user.id%>>
+                  <%= user.nickname%>
+
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="room-form">
+            <div class="user-confirmation" name="room[user_ids][]">
+              ②相談する相手はこの方でよろしいですか？
+              <div class='user-confirmation-bar'>
+              </div>
+              <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+              <input name="room[user_ids][]" type="hidden" class="select-user">
+            </div>
+            <div class="room-name">
+              ③ルーム名を入力してください。<br>
+              　何についての相談かがわかるような名前にしましょう。<br>
+              　例）次の会議の予定はいつ？<br>
+              <%= f.text_field :room_name, class:'room-name-input', placeholder: 'ルーム名を入力してください'%>
+            </div>
+            <div class="instructions">
+              ④入力が出来たら『ルーム作成』ボタンを押してルームを作成しましょう。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <%=f.submit 'ルーム作成', class:"add-task-btn" %>
+      </div> 
+    <% end %>
+  </div>
+  <%= render "tasks/side"%>
+</div>

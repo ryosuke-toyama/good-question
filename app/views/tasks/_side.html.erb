@@ -1,16 +1,20 @@
 <div class="side">
   <div class="side-header">
-    <a class="question-btn" href="#">Question</a>
+    <a class="question-btn" href="/rooms/new">Question</a>
   </div>
   <div class="side-bar">
-    <% 20.times do |i|%>
+    <% current_user.rooms.each do |room| %>
       <a class="room-selector" href="#">
         <div class="room-status">
-          わからないこと<%= i + 1%>
+          <%= room.room_name %>
         </div>
-        <div class="room-status">
-          相談者：〇〇
-        </div>
+        <% room.room_users.each do |room_user|%>
+          <%unless room_user.user_id == current_user.id %>
+            <div class="room-status">
+              相談者: <%= room_user.user.nickname%>
+            </div>
+          <% end %>
+        <% end %>
       </a>
     <% end %>
   </div>

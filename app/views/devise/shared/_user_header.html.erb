@@ -3,9 +3,13 @@
 </div>
 
 <p class="explanatory-text">
+  <% unless request.fullpath == '/users/edit' %>
   Good Questionへようこそ。<br>
   このアプリケーションは音声入力でToDoリスト作成することが出来ます。<br>
   わずらわしい文字入力を極力無くして、これからやることを声に出して管理してみましょう。<br>
   ToDoを行う上で確認しなければならないことはチャット機能を使い、他のユーザーに聞いてみましょう<br>
   もちろんチャットも音声入力で。リアルなコミュニケーションにより近い形でチャットを楽しみましょう！
+  <% else %>
+    <%= current_user.nickname %>
+  <% end %>
 </p>

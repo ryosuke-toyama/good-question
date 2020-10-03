@@ -1,3 +1,70 @@
-// Place all the styles related to the rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.room-builder{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.user-selector{
+  height: calc(100% - 40px);
+  margin-top: 20px;
+  width: 250px;
+}
+.user-seach{
+  height: 80px;
+  width: 100%;
+  color: #ffffff;
+}
+
+.user-scroll{
+  height: calc(100% - 80px);
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: visible;
+}
+
+.user-bar{
+  height: 40px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #1b2440;
+  line-height: 40px;
+  cursor: pointer;
+}
+.user-bar:hover{
+  color: #0099FF;
+}
+
+.room-form{
+  height: calc(100% - 40px);
+  margin-top: 20px;
+  margin-left: 40px;
+  width: 250px;
+  overflow: hidden;
+}
+.user-confirmation{
+  height: 150px;
+  color: #ffffff;
+}
+.user-confirmation-bar{
+  margin-top: 40px;
+  height: 40px;
+  width: 100%;
+  color: #ffffff;
+  background-color: #1b2440;
+  line-height: 40px;
+}
+.room-name{
+  color: #ffffff;
+}
+.room-name-input{
+  border: none;
+  width: 100%;
+  height: 25px;
+  background-color: #1b2440;
+  color: #ffffff;
+  margin: 10px;
+}
+.instructions{
+  margin-top: 40px;
+  color: #ffffff;
+}
