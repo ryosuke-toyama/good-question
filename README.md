@@ -1,24 +1,69 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version 6.0.0
 
-Things you may want to cover:
+* Database creation MySQL
 
-* Ruby version
+* Deployment instructions Heroku
 
-* System dependencies
+* # テーブル設計
 
-* Configuration
+## users テーブル
 
-* Database creation
+| Column                | Type       | Options     |
+| ----------------------| ---------- | ----------- |
+| nickname              | string     | null: false |
+| email                 | string     | null: false |
+| password              | string     | null: false |
+| password_confirmation | string     | null: false |
+| phone_number          | string     |             |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :rooms
+- has_many :tasks
 
-* Services (job queues, cache servers, search engines, etc.)
+## rooms テーブル
 
-* Deployment instructions
+| Column           | Type       | Options      |
+| ---------------- | ---------- | -------------|
+| room_name        | string     | null: false  |
 
-* ...
+### Association
+
+- has_many :users
+- has_many :problems
+
+## room_users テーブル
+
+| Column           | Type       | Options           |
+| ---------------- | ---------- | ----------------- |
+| room             | references | foreign_key: true |
+| user             | references | foreign_key: true |
+
+- belongs_to :room
+- belongs_to :user
+
+## problems テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| content          | text       | null: false                    |
+| room             | references | null: false, foreign_key: true |
+| user             | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+
+## tasks テーブル
+
+| Column            | Type       | Options                       |
+| ----------------- | ---------- | ----------------------------- |
+| runtime           | datetime   | null: false , uniqueness: true|
+| place             | string     |               uniqueness: true|
+| todo              | text       | null: false , uniqueness: true|
+| checked           | boolean    | null: false , uniqueness: true|
+| user_id           | integer    | null: false , uniqueness: true|
+
+- belongs_to :user

@@ -4,7 +4,7 @@
   </div>
   <div class="side-bar">
     <% current_user.rooms.each do |room| %>
-      <a class="room-selector" href="#">
+      <%= link_to rooms_path(room.id), method: :get, class:'room-selector' do %>
         <div class="room-status">
           <%= room.room_name %>
         </div>
@@ -15,7 +15,7 @@
             </div>
           <% end %>
         <% end %>
-      </a>
+      <% end %>
     <% end %>
   </div>
 </div>
