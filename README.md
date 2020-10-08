@@ -42,17 +42,17 @@ Questionボタンで他ユーザーにチャット形式で質問する事が出
   タスクを作成するのにキーボードを入力するという手間を省く事で、本当に必要なことに時間を使えます。
 
 # アプリ利用情報
-URL : https://good-question-29196.herokuapp.com/
+URL : https://good-question-29196.herokuapp.com/  
 
-| テスト用アカウント（項目）｜ 内容           |
-|-------------------|----------------|
-| Eメール             | test@test.com |
-| パスワード           | test123        |
-| Basic認証 ID       | admin         |
-| Basic認証 PASS     | 2222          |
+テスト用アカウント  
+
+Eメール        : test@test.com  
+パスワード       :test123  
+Basic認証 ID   :admin  
+Basic認証 PASS :2222  
 
 ※ローカルで動作する場合  
-git clone https://github.com/ryosuke-toyama/good-question.git
+git clone https://github.com/ryosuke-toyama/good-question.git  
 
 # 開発環境
 
