@@ -1,7 +1,7 @@
 # README
 
 # アプリ名
-<span style="font-size: 250%;">**Good Question**</span>
+**Good Question**
 
 # 概要
 * 音声入力機能を備えたチャット・タスク管理アプリです。
