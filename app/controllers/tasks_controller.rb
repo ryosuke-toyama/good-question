@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     redirect_to new_user_session_path unless user_signed_in?
     @tasks = current_user.tasks.all.order('runtime ASC')
@@ -12,9 +12,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    if @task.runtime == nil
-      @task.runtime = Date.today
-    end
+    @task.runtime = Date.today if @task.runtime.nil?
     @task.checked = false
     if @task.save
       redirect_to root_path
@@ -52,13 +50,12 @@ class TasksController < ApplicationController
     end
 
     task_content = current_user.tasks.find(params[:id])
-    render json: { task: task_content}
+    render json: { task: task_content }
   end
 
   private
+
   def task_params
     params.require(:task).permit(:runtime, :place, :todo).merge(user_id: current_user.id)
   end
-
 end
-

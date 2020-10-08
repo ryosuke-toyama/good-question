@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
-  def index
-  end
+  def index; end
 
   def new
     @room = Room.new
@@ -13,13 +12,12 @@ class RoomsController < ApplicationController
     else
       render :new
     end
-
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
+
   def room_params
     params.require(:room).permit(:room_name, user_ids: [])
   end
