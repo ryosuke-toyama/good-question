@@ -44,8 +44,7 @@ Questionボタンで他ユーザーにチャット形式で質問する事が出
 # アプリ利用情報
 URL : https://good-question-29196.herokuapp.com/  
 
-テスト用アカウント  
-
+■テスト用アカウント  
 Eメール        : test@test.com  
 パスワード       :test123  
 Basic認証 ID   :admin  
