@@ -2,11 +2,12 @@
   <div class="main">
     <%= render "header"%>
     <%= form_with model:@task, local: true do |f|%>
+    <% current_time = Time.now %>
       <div class="center">
         <div class="f-label">
           日時
         </div>
-        <%= f.text_field :runtime, class:'f-content', placeholder: "例）2020-10-1 10:00", id:"runtime" %>
+        <%= f.text_field :runtime, class:'f-content', placeholder: "例）2020-10-1 10:00", value:current_time.strftime('%Y-%-m-%-d %H:%M'), id:"runtime" %>
         <div class="f-label">
           場所
         </div>

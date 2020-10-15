@@ -68,3 +68,69 @@
   margin-top: 40px;
   color: #ffffff;
 }
+
+.problem-form{
+  display: flex;
+  width: 100%;
+  margin: 0 5px;
+}
+
+// 音声入力ボタン
+.problem-start-btn{
+  display: block;
+  text-align: center;
+  line-height: 58px;
+  color: #ffffff;
+  height: 58px;
+  width: 58px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: #666;
+  cursor: pointer;
+}
+
+.problem-stop-btn{
+  text-align: center;
+  line-height: 58px;
+  color: #ffffff;
+  height: 58px;
+  width: 58px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: crimson;
+  cursor: pointer;
+}
+
+
+.text-form{
+  width: calc(100% - 200px);
+  border: none;
+  margin: 0 5px;
+  background-color: #171a23;
+  color: #ffffff;
+}
+
+.hidden{
+  display: none;
+}
+
+.form-image{
+  width: 60px;
+  height: 60px;
+}
+
+.problem-submit{
+  border: none;
+  border-radius: 50%;
+  background-color: #0099FF;
+  color: #ffffff;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 46px;
+}
+.problem-submit:hover{
+  cursor: pointer;
+  opacity: .8;
+}

@@ -12,7 +12,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.runtime = Date.today if @task.runtime.nil?
+    @task.runtime = Time.now if @task.runtime.nil?
     @task.checked = false
     if @task.save
       redirect_to root_path

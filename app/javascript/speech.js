@@ -1,4 +1,3 @@
-if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   window.addEventListener('load',function(){
     const startBtn = document.querySelector('#start-btn');
     const stopBtn = document.querySelector('#stop-btn');
@@ -49,4 +48,3 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       }
     }
   })
-};

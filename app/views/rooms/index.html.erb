@@ -5,7 +5,16 @@
       
     </div>
     <div class="footer">
-      <%# <a class="add-task-btn" href="/tasks/new">ルーム作成</a> %>
+      <%= form_with model: @room, html: {class: "problem-form"}, local: true do |f|%>
+      <div class="problem-start-btn" id="start-btn">START</div>
+      <div class="problem-stop-btn" id="stop-btn" style="display: none;">STOP</div>
+      <%= f.text_area :content, class: 'text-form', id:'todo', placeholder: '相談内容を入力して下さい', rows:'3' %>
+      <label class="form-image">
+        <span class="image-file"></span>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
+      <%= f.submit '', class: 'problem-submit' %>
+      <% end %>
     </div> 
   </div>
   <%= render "tasks/side"%>
