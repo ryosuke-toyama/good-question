@@ -2,7 +2,20 @@
   <div class="main">
     <%= render "tasks/header"%>
     <div class="center">
-      
+      <div class="chat-main">
+        <ul class="problem-contents">
+          <li class="problem-direction">
+            <div class="problem-text">
+              相談したいことがあるんですよ！ちょっと話をきいたもれ
+            </div>
+          </li>
+          <li>
+            <div class="answer-text">
+              どないしたんでっかそない慌てて
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="footer">
       <%= form_with model: @room, html: {class: "problem-form"}, local: true do |f|%>
