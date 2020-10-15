@@ -137,7 +137,9 @@ div[data-check="true"]{
   background-color: #666;
   cursor: pointer;
 }
-
+.start-btn:hover{
+  opacity: .8;
+}
 .stop-btn{
   text-align: center;
   line-height: 100px;
@@ -149,6 +151,9 @@ div[data-check="true"]{
   border: 10px solid #ffffff;
   background-color: crimson;
   cursor: pointer;
+}
+.stop-btn:hover{
+  opacity: .8;
 }
 
 // タスク作成ボタン

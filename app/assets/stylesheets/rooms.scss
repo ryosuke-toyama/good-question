@@ -88,7 +88,9 @@
   background-color: #666;
   cursor: pointer;
 }
-
+.problem-start-btn:hover{
+  opacity: .8;
+}
 .problem-stop-btn{
   text-align: center;
   line-height: 58px;
@@ -100,7 +102,9 @@
   background-color: crimson;
   cursor: pointer;
 }
-
+.problem-stop-btn:hover{
+  opacity: .8;
+}
 
 .text-form{
   width: calc(100% - 200px);
@@ -114,23 +118,36 @@
   display: none;
 }
 
-.form-image{
+.icon-form{
   width: 60px;
   height: 60px;
 }
-
-.problem-submit{
-  border: none;
-  border-radius: 50%;
-  background-color: #0099FF;
-  color: #ffffff;
+.image-file{
   width: 60px;
   height: 60px;
+}
+.image-file:before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f03e';
+  font-size: 60px;
+  cursor: pointer;
+}
+.image-file:hover{
+  color: #0099FF;
+}
+#problem-submit{
+  width: 60px;
+  height: 60px;
+  background-color: #0099FF;
+  border-radius: 50%;
+  margin-left: 5px;
   text-align: center;
   line-height: 60px;
-  font-size: 46px;
-}
-.problem-submit:hover{
+  font-size: 45px;
+  color: #ffffff;
   cursor: pointer;
+}
+
+#problem-submit:hover{
   opacity: .8;
 }

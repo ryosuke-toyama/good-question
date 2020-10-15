@@ -9,11 +9,14 @@
       <div class="problem-start-btn" id="start-btn">START</div>
       <div class="problem-stop-btn" id="stop-btn" style="display: none;">STOP</div>
       <%= f.text_area :content, class: 'text-form', id:'todo', placeholder: '相談内容を入力して下さい', rows:'3' %>
-      <label class="form-image">
+      <label class="icon-form">
         <span class="image-file"></span>
         <%= f.file_field :image, class: 'hidden' %>
       </label>
-      <%= f.submit '', class: 'problem-submit' %>
+      <label class="icon-form">
+        <i class="fas fa-arrow-up" id="problem-submit"></i>
+        <%= f.submit '', class: 'hidden' %>
+      </label>
       <% end %>
     </div> 
   </div>
