@@ -4,12 +4,12 @@
   </div>
   <div class="side-bar">
     <% current_user.rooms.each do |room| %>
-      <%= link_to rooms_path(room.id), method: :get, class:'room-selector' do %>
+      <%= link_to room_problems_path(room), method: :get, class:'room-selector' do %>
         <div class="room-status">
           <%= room.room_name %>
         </div>
         <% room.room_users.each do |room_user|%>
-          <%unless room_user.user_id == current_user.id %>
+          <% if room_user.user_id != current_user.id %>
             <div class="room-status">
               相談者: <%= room_user.user.nickname%>
             </div>
