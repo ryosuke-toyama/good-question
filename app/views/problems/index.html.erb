@@ -1,24 +1,45 @@
 <div class="contents">
   <div class="main">
     <%= render "tasks/header"%>
-    <div class="center">
+    <div class="center" id="center">
       <div class="chat-main">
-        <ul class="problem-contents">
-          <li class="problem-direction">
-            <div class="problem-text">
-              相談したいことがあるんですよ！ちょっと話をきいたもれ
-            </div>
-          </li>
-          <li>
-            <div class="answer-text">
-              どないしたんでっかそない慌てて
-            </div>
-          </li>
+        <ul class="problem-contents" id="problem-contents">
+        <% weekday_char = ["日","月","火","水","木","金","土"] %>
+        <% border_day = []%>
+          <% @problems.each do |problem|%>
+          <% unless border_day.include?(problem.created_at.strftime("%Y%-m%d"))%>
+        <% border_day << problem.created_at.strftime("%Y%-m%d")%>
+          <div>
+            <span class="day-border">
+              <%= problem.created_at.strftime("%-m 月 %d 日") %>(<%= weekday_char[problem.created_at.wday] %>)
+            </span>
+          </div>
+        <% end %>
+            <% if problem.user_id == current_user.id %>
+              <li class="problem-direction">
+                <div class="problem-text">
+                  <%= problem.content %>
+                </div>
+                <div class="created_at">
+                  <%= problem.created_at.strftime('%-H:%M') %>
+                </div>
+              </li>
+            <% else %>
+              <li>
+                <div class="answer-text">
+                  <%= problem.content %>
+                </div>
+                <div class="created_at">
+                  <%= problem.created_at.strftime('%-H:%M') %>
+                </div>
+              </li>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
     <div class="footer">
-      <%= form_with model: @room, html: {class: "problem-form"}, local: true do |f|%>
+      <%= form_with model: [@room, @problem], html: {class: "problem-form"}, id:"problem-form" do |f|%>
       <div class="problem-start-btn" id="start-btn">START</div>
       <div class="problem-stop-btn" id="stop-btn" style="display: none;">STOP</div>
       <%= f.text_area :content, class: 'text-form', id:'todo', placeholder: '相談内容を入力して下さい', rows:'3' %>
