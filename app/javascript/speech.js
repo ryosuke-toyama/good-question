@@ -1,15 +1,15 @@
   window.addEventListener('load',function(){
     const startBtn = document.querySelector('#start-btn');
     const stopBtn = document.querySelector('#stop-btn');
-    const toDo = document.querySelector('#todo');
-  
+    
     SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
     let recognition = new SpeechRecognition();
-  
+    
     recognition.lang = 'ja-JP';
     recognition.interimResults = true;
     recognition.continuous = true;
-  
+    
+    const toDo = document.querySelector('#todo');
   
     let finalTranscript = ''; // 確定した(黒の)認識結果
   

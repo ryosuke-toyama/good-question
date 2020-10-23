@@ -14,6 +14,7 @@ consumer.subscriptions.create("RoomChannel", {
     const pattern = /T\d{1,2}:\d{2}/;
     const extraction = data.problem.created_at.match(pattern);
     const strftime = extraction[0].slice(1);
+    console.log(data.problem.image)
     const HTML = `  
       <li class="problem-direction">
         <div class="problem-text">

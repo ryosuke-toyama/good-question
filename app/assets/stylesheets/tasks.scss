@@ -45,7 +45,8 @@
   height: calc(100vh - 170px);
   background-color: #171a23;
   padding: 0 15px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: visible;
 }
 
 
@@ -211,7 +212,8 @@ div[data-check="true"]{
 .side-bar{
   width: 100%;
   height: calc(100vh - 150px);
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .room-selector{
   display: block;

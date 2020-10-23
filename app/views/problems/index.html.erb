@@ -19,6 +19,7 @@
               <li class="problem-direction">
                 <div class="problem-text">
                   <%= problem.content %>
+                  <%= image_tag problem.image.variant(resize:'300x300'), class: 'message-image' if problem.image.attached? %>
                 </div>
                 <div class="created_at">
                   <%= problem.created_at.strftime('%-H:%M') %>
@@ -28,6 +29,7 @@
               <li>
                 <div class="answer-text">
                   <%= problem.content %>
+                  <%= image_tag problem.image.variant(resize:'300x300'), class: 'message-image' if problem.image.attached? %>
                 </div>
                 <div class="created_at">
                   <%= problem.created_at.strftime('%-H:%M') %>
