@@ -10,11 +10,14 @@ consumer.subscriptions.create("RoomChannel", {
   },
 
   received: function(data) {
+    const imageContent = document.getElementById('preview-content');
+    if (imageContent){
+      imageContent.remove();
+    }
     const problemContents = document.getElementById('problem-contents')
     const pattern = /T\d{1,2}:\d{2}/;
     const extraction = data.problem.created_at.match(pattern);
     const strftime = extraction[0].slice(1);
-    console.log(data.problem.image)
     const HTML = `  
       <li class="problem-direction">
         <div class="problem-text">

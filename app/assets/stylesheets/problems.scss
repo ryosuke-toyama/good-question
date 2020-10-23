@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // メインルームコンテンツ
+.chat-main{
+  position: relative;
+}
+
 .problem-contents li{
   color: #ffffff;
   display: flex;
@@ -33,6 +37,12 @@
   font-size: 2px;
   position: relative;
   bottom: 0;
+}
+
+// プレビュー画面
+.image-preview{
+  position: absolute;
+  right: 10px;
 }
 
 // フッター
