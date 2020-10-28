@@ -24,6 +24,10 @@ class ProblemsController < ApplicationController
   end
 
   def destroy
+    room = Room.find(params[:room_id])
+    problem = room.problems.find(params[:id])
+    problem.destroy
+    redirect_to room_problems_path(room.id)
   end
 
   private

@@ -31,12 +31,33 @@
   max-width: 60%;
 }
 
+.problem-delete-btn-space{
+  display: flex;
+  justify-content: center;
+}
+
+.problem-delete-btn{
+  margin: auto 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #1b2440;
+  border-radius: 50%;
+  align-items: center;
+  text-align: center;
+}
+.problem-delete-btn:before{
+  font-family: "Font Awesome 5 Free";
+  content: '\f2ed';
+  font-size: 15px;
+  color: #666;
+  cursor: pointer;
+}
+
 .created_at{
   color: #666;
   margin: auto 3px 0;
   font-size: 2px;
-  position: relative;
-  bottom: 0;
 }
 
 // プレビュー画面

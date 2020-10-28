@@ -4,17 +4,17 @@
     <div class="center" id="center">
       <div class="chat-main">
         <ul class="problem-contents" id="problem-contents">
-        <% weekday_char = ["日","月","火","水","木","金","土"] %>
-        <% border_day = []%>
+          <% weekday_char = ["日","月","火","水","木","金","土"] %>
+          <% border_day = []%>
           <% @problems.each do |problem|%>
-          <% unless border_day.include?(problem.created_at.strftime("%Y%-m%d"))%>
-        <% border_day << problem.created_at.strftime("%Y%-m%d")%>
-          <div>
-            <span class="day-border">
-              <%= problem.created_at.strftime("%-m 月 %d 日") %>(<%= weekday_char[problem.created_at.wday] %>)
-            </span>
-          </div>
-        <% end %>
+            <% unless border_day.include?(problem.created_at.strftime("%Y%-m%d"))%>
+              <% border_day << problem.created_at.strftime("%Y%-m%d")%>
+              <div>
+                <span class="day-border">
+                  <%= problem.created_at.strftime("%-m 月 %d 日") %>(<%= weekday_char[problem.created_at.wday] %>)
+                </span>
+              </div>
+            <% end %>
             <% if problem.user_id == current_user.id %>
               <li class="problem-direction">
                 <div class="problem-text">
@@ -24,6 +24,9 @@
                 <div class="created_at">
                   <%= problem.created_at.strftime('%-H:%M') %>
                 </div>
+                <%= link_to room_problem_path(@room.id, problem.id), method: :delete, class:'problem-delete-btn-space' do %>
+                  <div class="problem-delete-btn"></div>
+                <% end %>
               </li>
             <% else %>
               <li>
@@ -43,17 +46,17 @@
     </div>
     <div class="footer">
       <%= form_with model: [@room, @problem], html: {class: "problem-form"}, id:"problem-form" do |f|%>
-      <div class="problem-start-btn" id="start-btn">START</div>
-      <div class="problem-stop-btn" id="stop-btn" style="display: none;">STOP</div>
-      <%= f.text_area :content, class: 'text-form', id:'todo', placeholder: '相談内容を入力して下さい', rows:'3' %>
-      <label class="icon-form">
-        <span class="image-file"></span>
-        <%= f.file_field :image, class: 'hidden' %>
-      </label>
-      <label class="icon-form">
-        <i class="fas fa-arrow-up" id="problem-submit"></i>
-        <%= f.submit '', class: 'hidden' %>
-      </label>
+        <div class="problem-start-btn" id="start-btn">START</div>
+        <div class="problem-stop-btn" id="stop-btn" style="display: none;">STOP</div>
+        <%= f.text_area :content, class: 'text-form', id:'todo', placeholder: '相談内容を入力して下さい', rows:'3' %>
+        <label class="icon-form">
+          <span class="image-file"></span>
+          <%= f.file_field :image, class: 'hidden' %>
+        </label>
+        <label class="icon-form">
+          <i class="fas fa-arrow-up" id="problem-submit"></i>
+          <%= f.submit '', class: 'hidden' %>
+        </label>
       <% end %>
     </div> 
   </div>
