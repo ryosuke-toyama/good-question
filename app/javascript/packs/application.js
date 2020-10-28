@@ -11,6 +11,7 @@ require("../speech")
 require("../checked")
 require("../select")
 require("../preview")
+require("../delete_btn")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

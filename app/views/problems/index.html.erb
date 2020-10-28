@@ -1,5 +1,5 @@
 <div class="contents">
-  <div class="main">
+  <div class="main" id="main">
     <%= render "tasks/header"%>
     <div class="center" id="center">
       <div class="chat-main">
@@ -25,7 +25,7 @@
                   <%= problem.created_at.strftime('%-H:%M') %>
                 </div>
                 <%= link_to room_problem_path(@room.id, problem.id), method: :delete, class:'problem-delete-btn-space' do %>
-                  <div class="problem-delete-btn"></div>
+                  <div class="problem-delete-btn" id="problem-delete-btn" style="display: none;"></div>
                 <% end %>
               </li>
             <% else %>

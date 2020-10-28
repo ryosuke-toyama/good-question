@@ -17,6 +17,7 @@ consumer.subscriptions.create("RoomChannel", {
     const problemContents = document.getElementById('problem-contents')
     const pattern = /T\d{1,2}:\d{2}/;
     const extraction = data.problem.created_at.match(pattern);
+    console.log(data);
     const strftime = extraction[0].slice(1);
     const HTML = `  
       <li class="problem-direction">
@@ -26,10 +27,17 @@ consumer.subscriptions.create("RoomChannel", {
         <div class="created_at">
           ${strftime}
         </div>
+        <a class="problem-derete-btn-space" rel="nofollow" data-method="delete" href="/rooms/${data.problem.room_id}/problems/${data.problem.id}">
+          <div class="problem-delete-btn" id="problem-delete-btn" style="display: none;"></div>
+        </a>
       </li>`;
     problemContents.insertAdjacentHTML("beforeend", HTML);
 
     const formText = document.getElementById("todo");
     formText.value = "";
+
+    const target = document.getElementById("center");
+    target.scrollTop = target.scrollHeight;
+
   }
 });
