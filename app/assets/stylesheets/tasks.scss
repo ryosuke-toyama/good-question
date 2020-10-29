@@ -215,14 +215,37 @@ div[data-check="true"]{
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+// ルームセレクトコンテンツ
+.room-contents{
+  display: flex;
+}
+
 .room-selector{
   display: block;
   height: 40px;
-  width: 100%;
+  width: calc(100% - 40px);
   color: #666;
-  padding: 8px 5px;
+  // padding: 8px 5px;
+  margin: 8px 5px;
 }
 .room-selector:hover{
   color: #0099FF;
 }
 
+.room-delete{
+  display: block;
+  margin: 8px 0;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.room-delete-btn:before{
+  font-family: "Font Awesome 5 Free";
+  content: '\f2ed';
+  font-size: 15px;
+  color: #666;
+  cursor: pointer;
+}
