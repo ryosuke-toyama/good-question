@@ -5,5 +5,6 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
 
-  validates :nickname, presence: true
+
+  validates :nickname, presence: true, length: {in: 1..12 }
 end

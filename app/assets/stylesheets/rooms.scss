@@ -1,5 +1,5 @@
 .room-builder{
-  height: 100%;
+  height: calc(100% - 200px);
   width: 100%;
   display: flex;
 }
@@ -66,5 +66,14 @@
 }
 .instructions{
   margin-top: 40px;
+  color: #ffffff;
+}
+
+.error-alert{
+  height: 200px;
+  width: 100%;
+}
+
+.error-message{
   color: #ffffff;
 }
