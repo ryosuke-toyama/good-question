@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function(){
     blobImage.setAttribute("id", "preview-content")
 
     imagePreview.appendChild(blobImage);
+
+    const target = document.getElementById("center");
+    target.scrollTop = target.scrollHeight;
     
   });
 });

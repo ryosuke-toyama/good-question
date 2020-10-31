@@ -1,6 +1,6 @@
 <div class="side">
   <div class="side-header">
-    <a class="question-btn" href="/rooms/new">Question</a>
+    <%= link_to 'Question', new_room_path, method: :get, class:'question-btn' %>
   </div>
   <div class="side-bar">
     <% current_user.rooms.each do |room| %>
